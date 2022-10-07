@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0px;
+}
+:root {
+    font-size: max(3vw, 18px);
+    line-height: 1.2em;
+    font-family: "TimesNewArial";
+    font-variation-settings: "ital" -100, "srff" 10;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
+}
+
+@font-face {
+    font-family: "TimesNewArial";
+    src: url("./TimesNewArialGX.ttf") format("truetype-variations");
+}
+
+h1,
+h2 {
+    font-size: 1em;
+    line-height: 1.2em;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+body {
+    background: #ddd;
+}
+
+main {
+    width: calc(100vw + 2px);
+    margin: -1px;
+    display: grid;
+    grid-template-columns: repeat(24, calc((100vw + 2px) / 24));
+}
+
+.frame {
+    outline: 2px black solid;
+    outline-offset: -1px;
+    padding: 0.3rem 0.4rem 0.2rem 0.4rem;
+}
+
+h1 {
+    grid-column: 1 / 6;
+}
+
+h2 {
+    grid-row: 2;
+    grid-column: 6 / 25;
+}
+
+time {
+    vertical-align: middle;
+    display: inline;
+}
+time.date {
+    grid-row: 3;
+    grid-column: 8 / span 10;
+}
+
+time.time {
+    grid-row: 4;
+    grid-column: 2 / span 10;
+}
+
+.location {
+    margin-top: 1.3rem;
+    grid-row: 6;
+    grid-column: 12 / span 10;
+}
+
+.location-desc {
+    grid-row: 7;
+    grid-column: 12 / 25;
+}
+
+@media screen and (max-width: 700px) {
+    .frame {
+        grid-column: 1 / span 25 !important;
+
+    }
+}
+
+/* aside */
+
+.zigzag {
+    --width: calc(100vw / 12);
+    margin-top: 1.3rem;
+    height: 1.3rem;
+    width: calc(100vw - var(--width));
+    background: linear-gradient(to bottom left,
+             rgba(0,0,0,0) 0%,
+             rgba(0,0,0,0) calc(50% - 1.5px),
+             rgba(0,0,0,1) 50%,
+             rgba(0,0,0,0) calc(50% + 1.5px),
+             rgba(0,0,0,0) 100%),
+         linear-gradient(90deg,
+             rgba(0,0,0,0) 0%,
+             rgba(0,0,0,0) calc(100% - 1.5px),
+             rgba(0,0,0,1) 50%,
+             rgba(0,0,0,0) calc(100% + 1.5px),
+             rgba(0,0,0,0) 100%);
+    background-size: var(--width) 1.3rem;
+    background-repeat: repeat-x;
+}
+
+.zigzag::after {
+    content: "";
+    width: var(--width);
+    left: calc(100vw - var(--width));
+    display: block;
+    height: 100%;
+    position: relative;
+    border-top: 2px solid black;
+}
+
+.credits {
+    width: 100vw;
+}
+
+.credit {
+    font-size: .5rem;
+    line-height: 1.3em;
+}
