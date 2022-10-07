@@ -1,5 +1,9 @@
 {
-  "redirects": [
-      { "source": "/:path", "destination": "https://polytope-xia.hfk-bremen.de/:path" }
-   ]
+    "redirects": [
+        { "source": "/", "destination": "https://polytope-xia.hfk-bremen.de/" },
+        {
+            "source": "/:path",
+            "destination": "https://polytope-xia.hfk-bremen.de/:path"
+        }
+    ]
 }
