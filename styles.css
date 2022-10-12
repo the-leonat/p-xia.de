@@ -128,7 +128,7 @@ time.date {
 
 time.time {
     grid-row: 5;
-    grid-column: 4 / span 10;
+    grid-column: 4 / span 13;
 }
 
 .location {
@@ -204,7 +204,7 @@ aside {
 }
 
 .credits {
-    max-height: calc(3.5 * 1.2em + 0.4rem);
+    max-height: calc(4.5 * 1.2em + 0.4rem);
 }
 
 .credits>div {
