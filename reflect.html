@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title></title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            html {
+            }
+
+            .outer-container {
+                -webkit-box-reflect: right;
+                width: 50vw;
+                height: 100vh;
+                
+                /* pointer-events: none; */
+            }
+
+            .container {
+                width: 50vw;
+                height: 50vh;
+                -webkit-box-reflect: below;
+                overflow: hidden;
+            }
+
+            .scroll-wrapper {
+                transform: translateY(var(--scroll-y));
+            }
+
+            .no-touch {
+                pointer-events: none;
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            p {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">
+                You are using an <strong>outdated</strong> browser. Please
+                <a href="#">upgrade your browser</a> to improve your experience.
+            </p>
+        <![endif]-->
+        <div class="outer-container">
+            <div class="container">
+                <div class="scroll-wrapper" style="--scroll-y: 0px">
+                    <h1>Reflection test</h1>
+                    <div
+                        style="
+                            width: 100%;
+                            height: 0;
+                            padding-bottom: 119%;
+                            position: relative;
+                        "
+                        class="no-touch"
+                    >
+                        <iframe
+                            src="https://giphy.com/embed/l0HlAT7FSl314sEEM"
+                            width="100%"
+                            height="100%"
+                            style="position: absolute"
+                            frameborder="0"
+                            class="giphy-embed"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Aut expedita nam placeat unde harum similique
+                        sapiente ducimus corrupti voluptatibus ipsum quos sed
+                        est, dolore provident illo, ipsa, qui earum veniam.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Officiis ex cumque alias quo incidunt tempore vitae quae
+                        nihil dolor. Possimus illo, sit ipsam minima hic
+                        asperiores reiciendis? Numquam, ab a.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Nulla voluptatibus corporis tenetur non adipisci
+                        blanditiis at officia voluptate asperiores ipsam
+                        tempora, quae deleniti possimus veritatis, eligendi
+                        inventore accusantium vel sed. Lorem ipsum dolor sit
+                        amet, consectetur adipisicing elit. Veniam, ratione
+                        doloremque dolore corrupti velit magnam culpa excepturi
+                        sit cupiditate dignissimos totam facilis ducimus minus
+                        eos dolor ex voluptate repellendus nam?
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hamsterjs/1.1.3/hamster.min.js" integrity="sha512-U6/va6frCvEeq+0/xSdBTBLmQAMuS+J+si2H05U252nc5Lr3cwOwewlGWzOCZMBARAnrmMwa0rG0FfwcbMf58g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+
+            let scrollY = 0;
+            const scrollContainer = document.querySelector(".scroll-wrapper");
+            const container = document.querySelector(".container");
+            var hamster = Hamster(document, true); // boolean is whether passive = true | false
+
+            const outerContainer = document.querySelector(".outer-container");
+            const min = 0;
+            const max = scrollContainer.offsetHeight - container.offsetHeight;
+            const handleScroll = (e, delta, deltaX, deltaY) => {
+                scrollY -= deltaY;
+                scrollY = Math.max(min, Math.min(scrollY, max));
+                window.requestAnimationFrame(() => {
+                    scrollContainer.style.setProperty(
+                        "--scroll-y",
+                        scrollY * -1 + "px"
+                    );
+                });
+            };
+            
+            hamster.wheel(handleScroll)
+        </script>
+    </body>
+</html>
