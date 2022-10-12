@@ -228,6 +228,19 @@ aside {
     }
 }
 
+@media screen and (min-width: 1200px) {
+
+    .credits>div {
+        grid-template-columns: repeat(8, 1fr);
+
+    }
+
+    .zigzag {
+        --width: calc(100vw / 8);
+
+    }
+}
+
 .credits.frame {
     overflow: visible;
 }
