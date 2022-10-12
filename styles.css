@@ -174,18 +174,18 @@ aside {
     width: calc(100vw - var(--width));
     background:
         linear-gradient(90deg,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0) calc(100% - 1.5px),
+            rgba(221, 221, 221, 0) 0%,
+            rgba(221, 221, 221, 0) calc(100% - 1.5px),
             rgba(0, 0, 0, 1) 50%,
-            rgba(0, 0, 0, 0) calc(100% + 1.5px),
-            rgba(0, 0, 0, 0) 100%),
+            rgba(221, 221, 221, 0) calc(100% + 1.5px),
+            rgba(221, 221,221, 0) 100%),
         linear-gradient(to bottom left,
             #ddd 0%,
             #ddd calc(50% - 1.5px),
             rgba(0, 0, 0, 1) 50%,
             #ddd calc(50% + 1.5px),
-            rgba(0, 0, 0, 0) calc(50% + 1.5px + 0.5rem),
-            rgba(0, 0, 0, 0) 100%);
+            rgba(221, 221, 221, 0) calc(50% + 1.5px + 0.5rem),
+            rgba(221, 221, 221, 0) 100%);
 
     background-size: var(--width) 1.5rem;
     background-repeat: repeat-x;
