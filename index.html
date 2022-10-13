@@ -102,7 +102,7 @@
                 <div class="credit">Prof. Kilian Schwoon</div>
 
                 <h3>Sound Engineer</h3>
-                <div class="credit single">Martin Dieckhoff</div> 
+                <div class="credit single">Martin Dieckhoff</div>
 
                 <h3>Artistic-scientific support</h3>
                 <div class="credit single">Daniel Teige</div>
@@ -115,7 +115,8 @@
                 <div class="credit">Nilya Musueva</div>
 
                 <h3>Thanks to</h3>
-                <div class="credit single">Hausverwaltung der HfK Bremen (Peter Lilienthal, Malte Sonnenschein, Angela Granda, Michael Hinrichs uvw.)</div>
+                <div class="credit single">Hausverwaltung der HfK Bremen (Peter Lilienthal, Malte Sonnenschein, Angela
+                    Granda, Michael Hinrichs uvw.)</div>
                 <div class="credit">Christian Hansen</div>
                 <div class="credit">Florian Bunjes</div>
                 <div class="credit">Jan Bending</div>
@@ -133,7 +134,8 @@
                     <img src="logos/wedigit.png" alt="We Digit" class="logo">
                 </div>
 
-                <h3 class="no-bold">This project is organized in the context of the Meta-Xenakis Global Centenary Celebration.</h3>
+                <h3 class="no-bold">This project is organized in the context of the Meta-Xenakis Global Centenary
+                    Celebration.</h3>
                 <img src="logos/meta.png" alt="We Digit" class="logo">
 
             </div>
@@ -171,10 +173,14 @@
             scrollableHeight =
                 document.body.scrollHeight - window.innerHeight;
             containers.forEach((scrollContainer, index) => {
+
+                const contentContainer = scrollContainer.querySelector(":scope > div");
+                console.log("get", contentContainer)
                 measured[index] =
-                    scrollContainer.scrollHeight -
+                    contentContainer.offsetHeight -
                     scrollContainer.offsetHeight;
             });
+            updateScrollPosition();
         };
 
         const handleResize = debounce(updateDimensions, 500);
