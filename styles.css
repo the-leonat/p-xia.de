@@ -155,9 +155,7 @@ time.time {
 /* aside */
 
 h3 {
-    grid-column: 1 / -1;
     font-size: max(.5rem, var(--base-font-size));
-    line-height: 1.4em;
     font-weight: 600;
 }
 
@@ -213,19 +211,16 @@ aside {
 }
 
 .credits>div {
-    gap: 0.2rem 0.4rem;
     padding: 0.2rem;
     width: 100vw;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    font-size: max(.5rem, var(--base-font-size));
+    line-height: 1.4em;
+    /* display: grid; */
+    /* grid-template-columns: repeat(1, auto); */
 }
 
 @media screen and (max-width: 700px) {
 
-    .credits>div {
-        grid-template-columns: repeat(2, 1fr);
-
-    }
 
     .zigzag {
         --width: calc(100vw / 4);
@@ -235,7 +230,7 @@ aside {
 
 @media screen and (min-width: 1200px) {
 
-    .credits>div {
+    /* .credits>div {
         grid-template-columns: repeat(8, 1fr);
 
     }
@@ -243,11 +238,12 @@ aside {
     .zigzag {
         --width: calc(100vw / 8);
 
-    }
+    } */
 }
 
 .credits.frame {
     overflow: visible;
+
 }
 
 .credits.frame::before {
@@ -260,17 +256,19 @@ aside {
 
 
 .credit {
-    font-size: max(.5rem, var(--base-font-size));
-    line-height: 1.0em;
+    display: inline;
+    white-space: nowrap;
     /* padding: 0 0.4em 0 0.4em; */
 }
 
-.credit.single {
-    grid-column: 1 / -1;
-
+.credit::after {
+    content: ", "
 }
 
-.credit.single+.credit.single {}
+.credit:not(:has(+ .credit))::after {
+    content: "";
+
+}
 
 .logos {
     display: grid;

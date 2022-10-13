@@ -168,7 +168,6 @@
             containers.forEach((scrollContainer, index) => {
 
                 const contentContainer = scrollContainer.querySelector(":scope > div");
-                console.log("get", contentContainer)
                 measured[index] =
                     contentContainer.offsetHeight -
                     scrollContainer.offsetHeight;
