@@ -5,7 +5,7 @@
 }
 
 :root {
-    --base-font-size: 18px;
+    --base-font-size: 17px;
     font-size: min(35px, max(3.5vmin, var(--base-font-size)));
     line-height: 1.2em;
     font-family: "TimesNewArial";
@@ -13,6 +13,10 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
 
+}
+
+.nb {
+    white-space: nowrap;
 }
 
 @font-face {
