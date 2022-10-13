@@ -155,7 +155,7 @@ time.time {
 /* aside */
 
 h3 {
-    font-size: max(.5rem, var(--base-font-size));
+    font-size: inherit;
     font-weight: 600;
     line-height: 1.4em;
 }
@@ -214,7 +214,7 @@ aside {
 .credits>div {
     padding: 0.2rem;
     width: 100vw;
-    font-size: max(.5rem, var(--base-font-size));
+    font-size: max(.6rem, var(--base-font-size));
     line-height: 1.4em;
     /* display: grid; */
     /* grid-template-columns: repeat(1, auto); */
