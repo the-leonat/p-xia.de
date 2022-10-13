@@ -157,6 +157,7 @@ time.time {
 h3 {
     font-size: max(.5rem, var(--base-font-size));
     font-weight: 600;
+    line-height: 1.4em;
 }
 
 h3:not(:first-of-type) {
